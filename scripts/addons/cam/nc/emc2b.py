@@ -23,7 +23,9 @@ class Creator(iso_modal.Creator):
     def PROGRAM(self): return None
     def PROGRAM_END(self):
         if self.output_tool_change:
-            return( 'T0' + self.SPACE() + 'M06' + self.SPACE() + 'M02')
+            # return( 'T0' + self.SPACE() + 'M06' + self.SPACE() + 'M02')
+            # WIP modifications for Raptor
+            return( 'T0' + self.SPACE() + 'M06' + '\n' + 'M02')
         else:
             return('M02')
 
@@ -39,6 +41,10 @@ class Creator(iso_modal.Creator):
             self.write( ('(Created with emc2b post processor ' + str(now.strftime("%Y/%m/%d %H:%M")) + ')' + '\n') )
         else:
             self.write( ('(Created with emc2b Cutter Radius Compensation post processor ' + str(now.strftime("%Y/%m/%d %H:%M")) + ')' + '\n') )
+
+        # WIP modifications for Raptor
+        self.write( ('%' + '\n') )
+
         iso_modal.Creator.program_begin(self, id, comment)
 
 

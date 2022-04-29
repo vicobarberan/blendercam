@@ -138,6 +138,9 @@ def exportGcodePath(filename, vertslist, operations):
     elif m.post_processor == 'LYNX_OTTER_O':
         extension = '.nc'
         from .nc import lynx_otter_o as postprocessor
+    elif m.post_processor == 'RAPTOR':
+        extension = '.nc'
+        from .nc import raptor as postprocessor
 
     if s.unit_settings.system == 'METRIC':
         unitcorr = 1000.0
