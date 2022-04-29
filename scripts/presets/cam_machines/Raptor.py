@@ -4,6 +4,7 @@ s = bpy.context.scene.unit_settings
 
 d.post_processor = 'RAPTOR'
 s.system = 'METRIC'
+s.length_unit = 'MILLIMETERS'
 d.use_position_definitions = False
 d.starting_position = (0.0, 0.0, 0.0)
 d.mtc_position = (0.0, 0.0, 0.0)

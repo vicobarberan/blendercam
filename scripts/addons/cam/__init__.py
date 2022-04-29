@@ -1133,6 +1133,7 @@ class AddPresetCamMachine(bl_operators.presets.AddPresetBase, Operator):
     preset_values = [
         "d.post_processor",
         "s.system",
+        "s.length_unit",
         "d.use_position_definitions",
         "d.starting_position",
         "d.mtc_position",
